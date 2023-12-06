@@ -204,6 +204,7 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
                             UploadSong uploadSong = new UploadSong(SongsCategory,title1,artist1,album_art1,duration1,uri.toString());
                             String uploadId = referencesongs.push().getKey();
                             referencesongs.child(uploadId).setValue(uploadSong);
+                            Toast.makeText(MainActivity.this, "Song Uploaded"+title.getText(), Toast.LENGTH_SHORT).show();
                         }
                     });
                 }
