@@ -192,7 +192,7 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
         {
             Toast.makeText(this, "uploading please wait!", Toast.LENGTH_SHORT).show();
             progressbar.setVisibility(View.VISIBLE);
-            final StorageReference storageReference=mStrorageref.child(System.currentTimeMillis()+"."+getfileextension(audiouri));
+            final StorageReference storageReference=mStrorageref.child(title.getText()+"."+getfileextension(audiouri));
             uploadTask=storageReference.putFile(audiouri).addOnSuccessListener(new OnSuccessListener<UploadTask.TaskSnapshot>() {
                 @Override
                 public void onSuccess(UploadTask.TaskSnapshot taskSnapshot) {
